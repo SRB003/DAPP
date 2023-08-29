@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Options</title>
+    <style>
+        body {
+            background-color: #F2F2F2;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+          }
+          
+          .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .registration-option {
+            display: flex;
+            align-items: center;
+            
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .registration-option label {
+            margin-left: 15px;
+            font-size: 18px;
+            color: #555555;
+        }
+
+        .registration-option input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .checkmark {
+            position: relative;
+            height: 20px;
+            width: 20px;
+            background-color: #ffffff;
+            border: 2px solid #999999;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .registration-option input[type="radio"]:checked ~ .checkmark {
+            border-color: #FF4500;
+            background-color: #FF4500;
+        }
+
+        .checkmark::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .registration-option input[type="radio"]:checked ~ .checkmark::before {
+            opacity: 1;
+        }
+
+        .registration-option:hover .checkmark {
+            border-color: #FF4500;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 30px;
+            background-color: #FF6B01;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color:#FF4500;}
+        
+        .registration-option .radio-label {
+                margin-left: 10px;
+        }
+    </style>
+    <script>
+        function redirectToPage() {
+            var selectedOption = document.querySelector('input[name="registration_type"]:checked').value;
+            var redirectUrl = '';
+
+            if (selectedOption === 'hospital') {
+                redirectUrl = 'hospital.html';
+            } else if (selectedOption === 'patient') {
+                redirectUrl = 'Patient.html';
+            } else if (selectedOption === 'doctor') {
+                redirectUrl = 'doctor.html';
+            }
+            else if (selectedOption === 'insurance') {
+                redirectUrl = 'insurance.html';
+            }
+            else if (selectedOption === 'insurance') {
+                redirectUrl = 'patientdetails.html';
+            }
+
+            window.location.href = redirectUrl;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Registration Type</h1>
+        <form>
+         
+<label class="registration-option">
+    <input type="radio" id="hospital" name="registration_type" value="hospital">
+    <span class="checkmark"></span>
+    <span class="radio-label option-label">Hospital Registration</span>
+</label>
+<label class="registration-option">
+    <input type="radio" id="patient" name="registration_type" value="patient">
+    <span class="checkmark"></span>
+    <span class="radio-label option-label">Patient Registration</span>
+</label>
+<label class="registration-option">
+    <input type="radio" id="patient" name="registration_type" value="patient">
+    <span class="checkmark"></span>
+    <span class="radio-label option-label">Patient Details</span>
+</label>
+<label class="registration-option">
+    <input type="radio" id="doctor" name="registration_type" value="doctor">
+    <span class="checkmark"></span>
+    <span class="radio-label option-label">Doctor Registration</span>
+</label>
+<label class="registration-option">
+    <input type="radio" id="insurance" name="registration_type" value="insurance">
+    <span class="checkmark"></span>
+    <span class="radio-label option-label">Health insurance registration</span>
+</label>
+
+            <input type="button" class="submit-button" value="Next" onclick="redirectToPage()">
+        </form>
+    </div>
+</body>
+</html>

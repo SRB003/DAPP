@@ -1,0 +1,162 @@
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f1f1f1;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .form-container {
+        width: 50%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif;
+    }   
+
+   
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px;
+        font-size: 14px;
+        font-family: "Monstret", sans-serif;
+    }
+
+    .form-submit-button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #FF6B01;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: "Monstret", sans-serif;
+    }
+
+    .form-submit-button:hover {
+        background-color:#FF4500;
+    }
+
+    .details-link {
+        margin-top: 20px;
+        text-align: center;
+        font-family: "Monstret", sans-serif;
+    }
+
+   
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: "Monstret", sans-serif;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="form-container">
+    <h2>Register Patient</h2>
+    <div>
+        <img src="img/Reg2.png" width="350px">
+    </div>
+    <form>
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td>Enter Patient Id:</td>
+                    <td><input type="text" id="id1" name="id1" class="form-input" placeholder="patient UID"></td>
+                </tr>
+                <tr>
+                    <td>Patient Name:</td>
+                    <td><input type="text" id="name1" name="name1" class="form-input" placeholder="Name"></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" id="age" name="age" class="form-input" placeholder="Age"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="text" id="gen" name="gen" class="form-input"placeholder="Gender"></td>
+                </tr>
+                <tr>
+                    <td>Height(in ft):</td>
+                    <td><input type="text" id="hght" name="hght" class="form-input" placeholder="Height"></td>
+                </tr>
+                <tr>
+                    <td>Weight(in kg):</td>
+                    <td><input type="text" id="weig" name="weig" class="form-input"  placeholder="Weight"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" id="addr" name="addr" class="form-input" placeholder="Address"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td><input type="text" id="pno" name="pno" class="form-input" placeholder="Contact number"></td>
+                </tr>
+                <tr>
+                    <td>Email Id:</td>
+                    <td><input type="text" id="email" name="email" class="form-input" placeholder="Email if any"></td>
+                </tr>
+                <tr>
+                    <td>Date:</td>
+                    <td><input type="text" id="date" name="date" class="form-input"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <h2>Patient's Attendant Details</h2>
+    <form>
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td>Enter Patient Id:</td>
+                    <td><input type="text" id="id2" name="id2" class="form-input"  placeholder="Patient UID"></td>
+                </tr>
+                <tr>
+                    <td>Attendant Name:</td>
+                    <td><input type="text" id="aname1" name="aname1" class="form-input" placeholder="Attendant Name"></td>
+                </tr>
+                <tr>
+                    <td>Attendant Relation:</td>
+                    <td><input type="text" id="rel" name="rel" class="form-input"  placeholder="Relation"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td><input type="text" id="apno" name="apno" class="form-input"  placeholder="Contact Number"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <form>
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td><input type="button" onclick="add_details()" value="Register" class="form-submit-button"></td>
+                </tr>
+            </table>
+        </div>
+        <h5>To get details of a patient <a href="patient_details.html">Click Here</a></h5>
+    </form>
+</div>
+
+<div class="details-link">
+   
+</div>

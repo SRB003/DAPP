@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dapp - Login</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+  <div class="container">
+    <form class="login-form">
+      <h1>Decentralized EHR</h1>
+      <img src="img/metamask (1).gif" height="200" width="250" style="padding-left: 0.5%;">
+      <button type="button" id="login-button">Connect with MetaMask</button>
+      <script>
+        
+        var loginBtn = document.getElementById('login-button');
+        loginBtn.addEventListener('click', function() {
+         
+          if (typeof window.ethereum === 'undefined') {
+            alert('Please install MetaMask and refresh the page.');
+            return;
+          }
+         
+          window.ethereum.enable()
+            .then(function() {
+              alert('You have been logged in.');
+              
+              window.location.href = 'options.html';
+            })
+            .catch(function(error) {
+              console.error(error);
+              alert('An error occurred while trying to log in. Please try again.');
+            });
+        });
+      
+      </script>
+      <hr>
+      <p>Or log in with:</p>
+      <div class="social-media">
+        <button class="google"><i class="fab fa-google"></i> Google</button>
+        <button class="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+      </div>
+    </form>
+    <div class="signup-link">
+     
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

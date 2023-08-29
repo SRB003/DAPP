@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f1f1f1;
+        }
+        
+        .container {
+            width: 50%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h2 {
+            margin-top: 0;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        table td {
+            padding: 10px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #FF6B01;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="button"]:hover {
+            background-color:#FF4500;
+        }
+        
+        a {
+            color: #FF6B01;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Previous dates of medical record updated</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Enter Patient Id:</td>
+                    <td><input type="text" id="id0" name="id0"></td>
+                </tr>
+                <tr>
+                    <td>Dates:</td>
+                    <td><input type="text" id="dates1" name="dates1"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" onclick="prev_details()" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+
+        <h2>Investigations</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Enter Record Id:</td>
+                    <td><input type="text" id="id1" name="id1"></td>
+                </tr>
+                <tr>
+                    <td>Blood Test:</td>
+                    <td><input type="text" id="blood" name="blood"></td>
+                </tr>
+                <tr>
+                    <td>Urine Test:</td>
+                    <td><input type="text" id="uri" name="uri"></td>
+                </tr>
+                <tr>
+                    <td>ECG:</td>
+                    <td><input type="text" id="ecg" name="ecg"></td>
+                </tr>
+                <tr>
+                    <td>MRI Scan:</td>
+                    <td><input type="text" id="mri" name="mri"></td>
+                </tr>
+                <tr>
+                    <td>CT Scan:</td>
+                    <td><input type="text" id="ct" name="ct"></td>
+                </tr>
+                <tr>
+                    <td>X-ray:</td>
+                    <td><input type="text" id="xray" name="xray"></td>
+                </tr>
+                <tr>
+                    <td>Lab Test(if any other):</td>
+                    <td><input type="text" id="lab" name="lab"></td>
+                </tr>
+            </table>
+        </form>
+
+        <h2>General Examination</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Enter Record Id:</td>
+                    <td><input type="text" id="id2" name="id2"></td>
+                </tr>
+                <tr>
+                    <td>Built:</td>
+                    <td><input type="text" id="built" name="built"></td>
+                </tr>
+                <tr>
+                    <td>Nourishment:</td>
+                    <td><input type="text" id="nou" name="nou"></td>
+                </tr>
+                <tr>
+                    <td>Eyes:</td>
+                    <td><input type="text" id="eyes" name="eyes"></td>
+                </tr>
+                <tr>
+                    <td>Tongue:</td>
+                    <td><input type="text" id="ton" name="ton"></td>
+                </tr>
+                <tr>
+                    <td>Pulse:</td>
+                    <td><input type="text" id="pulse" name="pulse"></td>
+                </tr>
+                <tr>
+                    <td>Blood Pressure:</td>
+                    <td><input type="text" id="bp" name="bp"></td>
+                </tr>
+                <tr>
+                    <td>Temperature:</td>
+                    <td><input type="text" id="temp" name="temp"></td>
+                </tr>
+                <tr>
+                    <td>Respiratory rate:</td>
+                    <td><input type="text" id="res" name="res"></td>
+                </tr>
+            </table>
+        </form>
+
+        <h2>Systemic Examination</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Enter Record Id:</td>
+                    <td><input type="text" id="id3" name="id3"></td>
+                </tr>
+                <tr>
+                    <td>CVS:</td>
+                    <td><input type="text" id="cvs" name="cvs"></td>
+                </tr>
+                <tr>
+                    <td>CNS:</td>
+                    <td><input type="text" id="cns" name="cns"></td>
+                </tr>
+                <tr>
+                    <td>RS:</td>
+                    <td><input type="text" id="rs" name="rs"></td>
+                </tr>
+                <tr>
+                    <td>Abdomen System:</td>
+                    <td><input type="text" id="abs" name="abs"></td>
+                </tr>
+            </table>
+        </form>
+
+        <form>
+            <table>
+                <tr>
+                    <td><input type="button" onclick="inv_details()" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+
+        <h4>Transaction Id: <a href=""><div id="result"></div></a></h4>
+    </div>
+    <script>
+        function prev_details() {
+        }
+
+        function inv_details() {
+        }
+    </script>
+</body>
+</html>
